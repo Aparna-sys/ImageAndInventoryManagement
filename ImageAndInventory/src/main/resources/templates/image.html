@@ -1,0 +1,47 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>View Image</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#btnViewImage").click(function() {
+        var imageName = $("#imageName").val();
+        
+        $.ajax({
+          type: "GET",
+          url: "/image",
+          data: {
+            name: imageName
+          },
+          success: function(data) {
+            $("#imageContainer").attr("src", "data:image/png;base64," + data);
+          },
+          error: function(xhr, status, error) {
+            console.log("Error: " + error);
+          }
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+<h1>View Image</h1>
+  <input type="text" id="imageName" placeholder="Image Name">
+  <button id="btnViewImage">View Image</button>
+  <br>
+  <img id="imageContainer" src="" alt="Image">
+</body>
+</html> -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+<meta charset="UTF-8">
+<title>View Image</title>
+</head>
+<body>
+<b>Hello</b>
+<div th:image="${image}"></div>
+</body>
+</html>
